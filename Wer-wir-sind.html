@@ -5,6 +5,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Zusatz-CSS für Sidebar links & Toggle -->
+    <style>
+        /* Wrapper als Flex-Container: Sidebar links, Inhalt rechts */
+        #wrapper {
+            display: flex;
+        }
+
+        /* Sidebar links, feste Breite */
+        #sidebar {
+            width: 260px;          /* kannst du anpassen */
+            flex-shrink: 0;
+        }
+
+        /* Hauptbereich nimmt den restlichen Platz ein */
+        #main {
+            flex: 1;
+        }
+
+        /* Toggle-Button im Header */
+        .sidebar-toggle {
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+
+        /* Wenn Sidebar eingeklappt ist */
+        #wrapper.sidebar-closed #sidebar {
+            display: none;
+        }
+
+        /* Optional: auf sehr kleinen Screens Sidebar standardmäßig zu */
+        @media (max-width: 980px) {
+            body:not(.no-auto-collapse) #wrapper {
+                /* Startzustand: Sidebar geschlossen auf kleinen Geräten */
+            }
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -70,6 +110,11 @@
 
             <!-- Header -->
             <header id="header">
+                <!-- NEU: Button zum Ein-/Ausklappen der Sidebar -->
+                <button id="sidebarToggle" class="sidebar-toggle" aria-label="Sidebar ein- und ausklappen">
+                    ☰
+                </button>
+
                 <a href="Home.html" class="logo"><strong>GedankenwerkTV</strong></a>
                 <ul class="icons">
                     <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -106,6 +151,20 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+
+<!-- NEU: kleines Script für den Toggle-Button -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('sidebarToggle');
+        var wrapper = document.getElementById('wrapper');
+
+        if (toggle && wrapper) {
+            toggle.addEventListener('click', function() {
+                wrapper.classList.toggle('sidebar-closed');
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
