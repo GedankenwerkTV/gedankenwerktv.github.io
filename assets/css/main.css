@@ -2274,91 +2274,104 @@ button,
     padding-top: 0; }
 html, body {
   height: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-y: auto !important;
   overflow-x: hidden;
 }
 
+#wrapper {
+  min-height: 100vh;
+}
+
+/* Sidebar immer links, aber nur auf Desktop sichtbar */
 #sidebar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  height: 100vh !important;
-  overflow-y: auto;
+  width: 26em;
   z-index: 1000;
 }
 
-#main {
-  margin-left: 25em; /* Breite der Sidebar – passe bei Bedarf an */
-  min-height: 100vh;
-  padding-bottom: 50px;
+#sidebar > .inner {
+  padding: 2.22222em;
 }
-#menuToggle {
-  display: block !important;
-  position: fixed !important;
-  top: 1em !important;
-  left: 1em !important;
-  z-index: 10000 !important;
-  width: 3em !important;
-  height: 3em !important;
-  background: rgba(0,0,0,0.1);
-  border-radius: 0.375em;
-  text-align: center;
-  line-height: 3em;
-  font-size: 1.5em;
-  color: #fff;
+
+/* Toggle Button (Hamburger) */
+#sidebar .toggle {
+  display: none; /* Wird nur auf Mobile sichtbar */
 }
-#menuToggle:before {
-  content: '\f0c9';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
+
+/* Mobile: Sidebar versteckt, per Slide-In */
 @media screen and (max-width: 1280px) {
   #sidebar {
-    position: fixed !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    height: 100vh !important;
-    z-index: 10000 !important;
-    background: #D8E9F0 !important;
-    transform: translateX(-100%) !important;
-    transition: transform 0.5s ease !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px; /* Feste Breite für Mobile */
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
+
   #sidebar.active {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
+
+  /* Hamburger Button */
   #sidebar .toggle {
-    display: block !important;
-    position: fixed !important;
-    top: 1em !important;
-    right: 1em !important;
-    z-index: 10001 !important;
-    width: 3em !important;
-    height: 3em !important;
-    line-height: 3em !important;
+    display: block;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    width: 3em;
+    height: 3em;
+    background: rgba(81, 116, 154, 0.9);
+    color: white;
+    border-radius: 0.375em;
     text-align: center;
-    font-size: 1.5em !important;
-    color: #fff !important;
-    background: rgba(0,0,0,0.1) !important;
-    border-radius: 0.375em !important;
-    text-indent: 0 !important;
+    line-height: 3em;
+    font-size: 1.5em;
+    z-index: 10001;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
+
   #sidebar .toggle:before {
-    content: '\f0c9' !important;
-    font-family: 'Font Awesome 5 Free' !important;
-    font-weight: 900 !important;
+    content: '\f0c9';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+  /* Hauptinhalt nach rechts schieben, wenn Sidebar offen */
+  body.sidebar-active #main {
+    transform: translateX(280px);
+    transition: transform 0.35s ease;
+  }
+
+  /* Overlay beim Öffnen */
+  body.sidebar-active::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: block;
   }
 }
 
-
-
-
-
-
-
+/* Desktop: Sidebar immer sichtbar, Toggle versteckt */
+@media screen and (min-width: 1281px) {
+  #sidebar {
+    position: relative !important;
+    transform: none !important;
+  }
+  #sidebar .toggle {
+    display: none !important;
+  }
+  #main {
+    margin-left: 0; /* Kein Margin mehr nötig */
+  }
+}
 
 
 
