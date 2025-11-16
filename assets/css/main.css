@@ -2316,9 +2316,12 @@ html, body {
   font-weight: 900;
 }
 /* === HAMBURGER-MENÜ RICHTIG === */
+#sidebar {
+  position: relative !important;
+}
 #sidebar .toggle {
   position: absolute !important;
-  left: 27em !important;
+  right: -3.5em !important; 
   top: 1em !important;
   width: 3em !important;
   height: 3em !important;
@@ -2329,15 +2332,12 @@ html, body {
   background: rgba(0,0,0,0.1) !important;
   border-radius: 0.375em !important;
   z-index: 10001 !important;
-  cursor: pointer !important;
+  text-indent: 0 !important;
 }
 #sidebar .toggle:before {
   content: '\f0c9' !important;
   font-family: 'Font Awesome 5 Free' !important;
   font-weight: 900 !important;
-}
-#sidebar .inner {
-  position: relative !important;
 }
 
 
