@@ -168,7 +168,29 @@
 					</div>
 
 			</div>
-
+            <script>
+				document.addEventListener('DOMContentLoaded', function () {
+					const sidebar = document.getElementById('sidebar');
+					const toggle = sidebar.querySelector('.toggle');
+					const body = document.body;
+	
+					// Öffnen/Schließen beim Klick auf Hamburger
+					toggle.addEventListener('click', function (e) {
+						e.stopPropagation(); // Verhindert, dass Klick sofort schließt
+						sidebar.classList.toggle('active');
+						body.classList.toggle('sidebar-active');
+					});
+	
+					// Schließen beim Klick außerhalb
+					document.addEventListener('click', function (e) {
+						if (body.classList.contains('sidebar-active') && 
+							!sidebar.contains(e.target) && 
+							!toggle.contains(e.target)) {
+							sidebar.classList.remove('active');
+							body.classList.remove('sidebar-active');
+						}
+					});
+				});
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
@@ -179,6 +201,7 @@
 	</body>
 
 </html>
+
 
 
 
