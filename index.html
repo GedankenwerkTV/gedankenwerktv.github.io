@@ -90,124 +90,120 @@
 
 				<!-- Sidebar -->
 					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="Home.html">Home</a></li>
-										<li><a href="News.html">News</a></li>
-										<li><a href="Social-Media.html">Social Media</a></li>
-										<li><a href="Blog.html">Blog</a></li>
-										<li><a href="Nützliche-Websites.html">Nützliche Websites</a></li>
-
-										</li>
-										<li>
-											<span class="opener">Bitcoin Universum</span>
-											<ul>
-												<li><a href="#">Blog</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Unsere Empfehlungen</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Unterstütze unsere Arbeit</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/8d9c4041-a710-499f-b7c5-6e62d98aea32.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; GedankenwerkTV. All rights reserved. <a href="</a>. Design: <a href="https://html5up.net">Design:HTML5 UP</a>.</p>
-								</footer>
-										<div class="toggle">Menu</div>
-						</div>
-					</div>
-
-			</div>
-    <script>
-		document.addEventListener('DOMContentLoaded', function () {
-	        const sidebar = document.getElementById('sidebar');
-	        const toggle  = sidebar.querySelector('.toggle');
-	        const body    = document.body;
-	
-	        // Hamburger öffnet/schließt
-	        toggle.addEventListener('click', function (e) {
-	            e.stopPropagation();
-	            sidebar.classList.toggle('active');
-	            body.classList.toggle('sidebar-active');
-	        });
-	
-	        // Nur Klick direkt auf das Overlay schließt die Sidebar
-	        body.addEventListener('click', function (e) {
-	            if (body.classList.contains('sidebar-active')) {
-	                const overlayClicked = e.target === body || (e.target.tagName === 'BODY');
-	                if (overlayClicked) {
-	                    sidebar.classList.remove('active');
-	                    body.classList.remove('sidebar-active');
-	                }
-	            }
-	        });
-	
-	        // Verhindere, dass Klicks innerhalb der Sidebar das Schließen auslösen
-	        sidebar.addEventListener('click', function (e) {
-	            e.stopPropagation();
-	        });
-	    });
-    </script>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-
-</html>
+				        <div class="inner">
+				            <!-- Search -->
+				            <section id="search" class="alt">
+				                <form method="post" action="#">
+				                    <input type="text" name="query" id="query" placeholder="Search" />
+				                </form>
+				            </section>
+				            <!-- Menu -->
+				            <nav id="menu">
+				                <header class="major">
+				                    <h2>Menu</h2>
+				                </header>
+				                <ul>
+				                    <li><a href="Home.html">Home</a></li>
+				                    <li><a href="News.html">News</a></li>
+				                    <li><a href="Social-Media.html">Social Media</a></li>
+				                    <li><a href="Blog.html">Blog</a></li>
+				                    <li><a href="Nützliche-Websites.html">Nützliche Websites</a></li>
+				                    <li>
+				                        <span class="opener">Bitcoin Universum</span>
+				                        <ul>
+				                            <li><a href="#">Blog</a></li>
+				                            <li><a href="#">Ipsum Adipiscing</a></li>
+				                            <li><a href="#">Tempus Magna</a></li>
+				                            <li><a href="#">Feugiat Veroeros</a></li>
+				                        </ul>
+				                    </li>
+				                    <li>
+				                        <span class="opener">Unsere Empfehlungen</span>
+				                        <ul>
+				                            <li><a href="#">Lorem Dolor</a></li>
+				                            <li><a href="#">Ipsum Adipiscing</a></li>
+				                            <li><a href="#">Tempus Magna</a></li>
+				                            <li><a href="#">Feugiat Veroeros</a></li>
+				                        </ul>
+				                    </li>
+				                    <li><a href="#">Unterstütze unsere Arbeit</a></li>
+				                </ul>
+				            </nav>
+				            <!-- Section -->
+				            <section>
+				                <header class="major">
+				                    <h2>Ante interdum</h2>
+				                </header>
+				                <div class="mini-posts">
+				                    <article>
+				                        <a href="#" class="image"><img src="images/8d9c4041-a710-499f-b7c5-6e62d98aea32.jpg" alt="" /></a>
+				                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+				                    </article>
+				                    <article>
+				                        <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+				                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+				                    </article>
+				                    <article>
+				                        <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+				                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+				                    </article>
+				                </div>
+				                <ul class="actions">
+				                    <li><a href="#" class="button">More</a></li>
+				                </ul>
+				            </section>
+				            <!-- Footer -->
+				            <footer id="footer">
+				                <p class="copyright">&copy; GedankenwerkTV. All rights reserved. <a href=""></a>. Design: <a href="https://html5up.net">Design:HTML5 UP</a>.</p>
+				            </footer>
+				        </div>
+				    </div>
+				</div>
+				
+				<!-- NEUER CODE KOMMT HIER -->
+				<script>
+				    // Mobile Menu aktivieren – 3 Zeilen, fertig
+				    document.addEventListener('DOMContentLoaded', function(){
+				        document.getElementById('sidebar').classList.add('inactive');
+				    });
+				</script>
+				
+				<!-- DEIN BESTEHENDER CODE -->
+				<script>
+				document.addEventListener('DOMContentLoaded', function () {
+				        const sidebar = document.getElementById('sidebar');
+				        const toggle = sidebar.querySelector('.toggle');
+				        const body = document.body;
+				        // Hamburger öffnet/schließt
+				        toggle.addEventListener('click', function (e) {
+				            e.stopPropagation();
+				            sidebar.classList.toggle('active');
+				            body.classList.toggle('sidebar-active');
+				        });
+				        // Nur Klick direkt auf das Overlay schließt die Sidebar
+				        body.addEventListener('click', function (e) {
+				            if (body.classList.contains('sidebar-active')) {
+				                const overlayClicked = e.target === body || (e.target.tagName === 'BODY');
+				                if (overlayClicked) {
+				                    sidebar.classList.remove('active');
+				                    body.classList.remove('sidebar-active');
+				                }
+				            }
+				        });
+				        // Verhindere, dass Klicks innerhalb der Sidebar das Schließen auslösen
+				        sidebar.addEventListener('click', function (e) {
+				            e.stopPropagation();
+				        });
+				    });
+				</script>
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+				</body>
+				</html>
 
 
 
