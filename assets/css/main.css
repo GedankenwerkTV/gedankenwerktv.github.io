@@ -2272,63 +2272,50 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
-html, body { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
-#wrapper { min-height: 100vh; }
-
-/* Desktop: alles wie original */
-@media screen and (min-width: 1281px) {
-    #sidebar .toggle { display: none !important; }
-}
-
-/* Mobile + Tablet */
 @media screen and (max-width: 1280px) {
-    /* Verstecke den originalen Toggle komplett */
-    #sidebar .toggle {
-        position: fixed !important;
-        top: 1.5em !important;
-        left: 1.5em !important;
-        width: 56px !important;
-        height: 56px !important;
-        background: #51749a !important;
-        color: white !important;
-        border-radius: 10px !important;
-        font-size: 1.7em !important;
-        line-height: 56px !important;
-        text-align: center !important;
-        z-index: 10002 !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
-        display: block !important;
-    }
-
     #sidebar {
-        position: fixed !important;
-        top: 0; left: 0;
-        width: 280px !important;
-        height: 100vh !important;
-        transform: translateX(-100%) !important;
-        transition: transform 0.4s ease !important;
-        z-index: 10001 !important;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    #sidebar.active {
-        transform: translateX(0) !important;
-    }
-
-    /* Overlay nur unter der Sidebar, nicht darüber */
-    body.sidebar-active::before {
-        content: '';
         position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.6);
-        z-index: 10000;   /* unter Sidebar (10001) und Button (10002) */
+        top: 0; left: 0;
+        width: 280px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform .4s ease;
+        z-index: 10001;
+        overflow-y: auto;
+    }
+    #sidebar.active { transform: translateX(0); }
+
+    #sidebar .toggle {
+        position: fixed;
+        top: 1.5em;
+        left: 1.5em;
+        width: 56px;
+        height: 56px;
+        background: #51749a;
+        color: white;
+        font-size: 1.8em;
+        line-height: 56px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.5);
+        z-index: 10002;
         cursor: pointer;
     }
+    #sidebar .toggle::before {
+        content: "\f0c9";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
 
-    /* Inhalt leicht nach rechts schieben (optional, sieht schöner aus) */
-    body.sidebar-active #main {
-        transform: translateX(280px);
-        transition: transform 0.4s ease;
+    body.sidebar-active::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.6);
+        z-index: 10000;
     }
 }
+@media screen and (min-width: 1281px) {
+    #sidebar .toggle { display: none; }
+}
+
