@@ -2272,104 +2272,63 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
+html, body { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+#wrapper { min-height: 100vh; }
 
-#wrapper {
-  min-height: 100vh;
-  flex-direction: row; /* Sidebar links statt rechts */
-}
-
-#sidebar {
-  order: -1; /* Sidebar nach links verschieben */
-  width: 26em;
-  z-index: 1000;
-}
-
-@media screen and (max-width: 1280px) {
-  #wrapper {
-    flex-direction: column; /* Auf Mobile stacken */
-  }
-
-  #sidebar {
-    position: fixed;
-    top: 0;
-    left: -280px; /* Versteckt links */
-    height: 100vh;
-    width: 280px;
-    transition: left 0.35s ease;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #sidebar.active {
-    left: 0;
-  }
-
-  #sidebar .toggle {
-    display: block !important; /* Zeige Hamburger */
-    position: fixed !important;
-    top: 1.5em !important;
-    left: 1.5em !important;
-    width: 3em !important;
-    height: 3em !important;
-    background: rgba(81, 116, 154, 0.9) !important;
-    color: white !important;
-    border-radius: 0.375em !important;
-    text-align: center !important;
-    line-height: 3em !important;
-    font-size: 1.5em !important;
-    z-index: 10001 !important;
-    cursor: pointer !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-  }
-
-  #sidebar .toggle:before {
-    content: '\f0c9' !important;
-    font-family: 'Font Awesome 5 Free' !important;
-    font-weight: 900 !important;
-  }
-
-  body.sidebar-active #main {
-    margin-left: 280px;
-    transition: margin-left 0.35s ease;
-  }
-
-  body.sidebar-active::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.35s ease;
-  }
-}
-
+/* Desktop: alles wie original */
 @media screen and (min-width: 1281px) {
-  #sidebar {
-    position: relative !important;
-    left: 0 !important;
-  }
-  #sidebar .toggle {
-    display: none !important;
-  }
-  body.sidebar-active::before {
-    display: none !important;
-  }
+    #sidebar .toggle { display: none !important; }
 }
 
+/* Mobile + Tablet */
+@media screen and (max-width: 1280px) {
+    /* Verstecke den originalen Toggle komplett */
+    #sidebar .toggle {
+        position: fixed !important;
+        top: 1.5em !important;
+        left: 1.5em !important;
+        width: 56px !important;
+        height: 56px !important;
+        background: #51749a !important;
+        color: white !important;
+        border-radius: 10px !important;
+        font-size: 1.7em !important;
+        line-height: 56px !important;
+        text-align: center !important;
+        z-index: 10002 !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+        display: block !important;
+    }
 
+    #sidebar {
+        position: fixed !important;
+        top: 0; left: 0;
+        width: 280px !important;
+        height: 100vh !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.4s ease !important;
+        z-index: 10001 !important;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 
+    #sidebar.active {
+        transform: translateX(0) !important;
+    }
 
+    /* Overlay nur unter der Sidebar, nicht darüber */
+    body.sidebar-active::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 10000;   /* unter Sidebar (10001) und Button (10002) */
+        cursor: pointer;
+    }
 
-
-
+    /* Inhalt leicht nach rechts schieben (optional, sieht schöner aus) */
+    body.sidebar-active #main {
+        transform: translateX(280px);
+        transition: transform 0.4s ease;
+    }
+}
