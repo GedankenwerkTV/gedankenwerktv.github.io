@@ -202,8 +202,22 @@
 				<script src="assets/js/breakpoints.min.js"></script>
 				<script src="assets/js/util.js"></script>
 				<script src="assets/js/main.js"></script>
+				<script>
+		    // Fix für 3-Ebenen-Menü im Editorial-Template
+		    document.addEventListener('DOMContentLoaded', function() {
+		        // Alle opener in der Sidebar neu binden
+		        var openers = document.querySelectorAll('#menu .opener');
+		        openers.forEach(function(opener) {
+		            opener.addEventListener('click', function(e) {
+		                e.stopPropagation();                // ← das ist der entscheidende Befehl!
+		                this.classList.toggle('active');
+		            });
+		        });
+		    });
+		</script>
 				</body>
 				</html>
+
 
 
 
