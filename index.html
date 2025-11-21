@@ -30,7 +30,6 @@
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
-								    <a href="#sidebar" class="toggle"></a>
 								</header>
 
 							<!-- Banner -->
@@ -125,17 +124,7 @@
 				                        <span class="opener">Bitcoin-Universum</span>
 				                        <ul>
 				                            <li><a href="#">News</a></li>
-				                            <li>
-									            <span class="opener">Bitcoin verstehen</span>
-									            <ul>
-									                <li><a href="#">Was ist Bitcoin?</a></li>
-									                <li><a href="#">Wie funktioniert die Blockchain?</a></li>
-									                <li><a href="#">Mining & Halving erklärt</a></li>
-									                <li><a href="#">Private & Public Keys</a></li>
-									                <li><a href="#">Transaktionen & Gebühren</a></li>
-									                <li><a href="#">Satoshi Nakamoto – Die Legende</a></li>
-									            </ul>
-									        </li>
+				                            <li><a href="#">Bitcoin verstehen</a></li>
 				                            <li><a href="#">Nützliche Links</a></li>
 				                            <li><a href="#">White Paper</a></li>
 				                        </ul>
@@ -202,21 +191,10 @@
 				<script src="assets/js/browser.min.js"></script>
 				<script src="assets/js/breakpoints.min.js"></script>
 				<script src="assets/js/util.js"></script>
-				<script>
-		    // Fix für 3-Ebenen-Menü im Editorial-Template
-		    document.addEventListener('DOMContentLoaded', function() {
-		        // Alle opener in der Sidebar neu binden
-		        var openers = document.querySelectorAll('#menu .opener');
-		        openers.forEach(function(opener) {
-		            opener.addEventListener('click', function(e) {
-		                e.stopPropagation();                // ← das ist der entscheidende Befehl!
-		                this.classList.toggle('active');
-		            });
-		        });
-		    });
-		</script>
+				<script src="assets/js/main.js"></script>
 				</body>
 				</html>
+
 
 
 
