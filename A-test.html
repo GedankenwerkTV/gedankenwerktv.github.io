@@ -74,7 +74,10 @@ Verkäufer vor Betrug, während übliche Treuhanddienste leicht implementiert we
 könnten, um Käufer zu schützen. In dieser Arbeit schlagen wir eine Lösung des Doppelausgabenproblems vor, bei welcher ein Peer-to-Peer-verteilter Zeitstempelserver benutzt wird, um einen rechnergestützten Nachweis der chronologischen Reihenfolge von
 Transaktionen zu erzeugen. Das System ist sicher, solange ehrliche Nodes kollektiv mehr
 CPU-Leistung kontrollieren als jede kooperierende Gruppe angreifender Nodes.</p>
-									    <p></p>
+									    <h2 id="content">2. Transaktionen</h2>
+									    <p>Wir definieren einen elektronischen Coin als eine Kette digitaler Signaturen. Jeder Besitzer transferiert den Coin zum nächsten, indem er einen Hashwert der vorherigen
+Transaktion sowie den öffentlichen Schlüssel des nächsten Besitzers digital signiert und
+beide dem Ende des Coins hinzufügt. Der Zahlungsempfänger kann die Signaturen verifizieren, um die Inhaberkette zu verifizieren.</p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
