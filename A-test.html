@@ -99,8 +99,18 @@ oder einem Usenet-Beitrag [2-5]. Der Zeitstempel beweist, dass die Daten offensi
 Jeder Zeitstempel schließt den vorherigen in seinen Hashwert ein und bildet so eine
 Kette, wobei jeder zusätzliche Zeitstempel die vorangegangenen bekräftigt.</p>
 									    <p><span class="image fit"><img src="images/hash2.jpg" alt="" /></span>
-									    <p></p>
-									    <p></p>
+										<h2 id="content">4. Arbeitsnachweis</h2>	
+									    <p>Um einen verteilten Zeitstempelserver auf Peer-to-Peer-Basis zu implementieren, werden wir statt Zeitungen oder Usenet-Beiträgen ein Arbeitsnachweissystem ähnlich dem
+von Adam Backs Hashcash [6] benötigen. Der Arbeitsnachweis involviert die Suche nach
+einem Wert, der, wenn er – beispielsweise mit SHA-256 – gehasht wird, mit einer Reihe
+von Null-Bits beginnt. Die durchschnittlich erforderliche Arbeit steigt mit der Anzahl der
+erforderlichen Null-Bits exponentiell an und kann durch das Ausführen einer einzigen
+Hashfunktion verifiziert werden.</p>
+									    <p>Wir implementieren den Arbeitsnachweis für unser Zeitstempelnetzwerk, indem wir
+eine Nonce im Block so lange erhöhen, bis ein Wert gefunden wird, welcher dem Block
+die notwendige Anzahl an Null-Bits gibt. Sobald die zur Bereitstellung des Arbeitsnachweises erforderliche CPU-Leistung aufgewandt wurde, kann der Block nicht geändert
+werden, ohne diese Arbeit erneut zu verrichten. Sobald spätere Blöcke nach ihm in die
+Kette aufgenommen werden, schlösse die Arbeit zur Änderung des Blockes die Wiedererzeugung aller auf ihn folgenden Blöcke ein.</p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
