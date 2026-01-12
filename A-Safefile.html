@@ -67,7 +67,42 @@ bei Streitigkeiten zu vermitteln. Die Kosten der Konfliktlösung erhöht die Tra
 des Verlustes der Fähigkeit, irreversible Zahlungen für irreversible Dienstleistungen tätigen zu können. Mit der Möglichkeit einer Rückgängigmachung breitet sich die Notwendigkeit des Vertrauens aus. Händler müssen ihren Kunden gegenüber argwöhnisch sein
 und ihnen mehr Informationen abverlangen, als sie ansonsten benötigten. Ein gewisser
 Anteil an Betrügerei wird als unausweichlich hingenommen. Diese Kosten und Zahlungsunsicherheiten können bei persönlichen Interaktionen durch die Verwendung von Bargeld vermieden werden, doch es existiert kein Mechanismus, der Zahlungen ohne vertrauenswürdige Dritte über Kommunikationskanäle ermöglichte.</p>
-										<p></p>
+										<p>Was notwendig ist, ist ein Zahlungssystem, das auf kryptographischen Nachweisen
+statt Vertrauen beruht und es zwei so geneigten Parteien ermöglicht, direkt und ohne
+Rückgriff auf eine vertrauenswürdige dritte Partei Transaktionen untereinander abzuwickeln. Transaktionen, die praktisch nicht rückgängig gemacht werden können, schützten
+Verkäufer vor Betrug, während übliche Treuhanddienste leicht implementiert werden
+könnten, um Käufer zu schützen. In dieser Arbeit schlagen wir eine Lösung des Doppelausgabenproblems vor, bei welcher ein Peer-to-Peer-verteilter Zeitstempelserver benutzt wird, um einen rechnergestützten Nachweis der chronologischen Reihenfolge von
+Transaktionen zu erzeugen. Das System ist sicher, solange ehrliche Nodes kollektiv mehr
+CPU-Leistung kontrollieren als jede kooperierende Gruppe angreifender Nodes.</p>
+									    <h2 id="content">2. Transaktionen</h2>
+									    <p>Wir definieren einen elektronischen Coin als eine Kette digitaler Signaturen. Jeder Besitzer transferiert den Coin zum nächsten, indem er einen Hashwert der vorherigen
+Transaktion sowie den öffentlichen Schlüssel des nächsten Besitzers digital signiert und
+beide dem Ende des Coins hinzufügt. Der Zahlungsempfänger kann die Signaturen verifizieren, um die Inhaberkette zu verifizieren.</p>
+									    <p><span class="image left"><img src="images/Transaktion1.jpg" alt="" /></span>
+									    <p>Das Problem ist natürlich, dass der Zahlungsempfänger nicht verifizieren kann, dass
+keiner der vorherigen Besitzer den Coin zweimal ausgegeben hat. Eine herkömmliche
+Lösung ist das Hinzuziehen einer zentralen Autorität, oder Münzstätte, die jede Transaktion auf Doppelausgaben hin überprüft. Nach jeder Transaktion muss der Coin bei der
+Münzstätte abgeliefert werden, um einen neuen ausgeben zu lassen, und nur im Falle
+von Coins, die direkt von der Münzstätte stammen, ist Verlass darauf, dass sie nicht doppelt ausgegeben wurden. Das Problem mit dieser Lösung ist, dass das Schicksal des gesamten Geldsystems von dem Unternehmen abhängt, welches die Münzstätte betreibt,
+wobei jede Transaktion über dieses laufen muss, genau wie bei einer Bank.</p>
+									    <p>Wir benötigen eine Möglichkeit, den Zahlungsempfänger wissen zu lassen, dass der
+vorherige Besitzer keine früheren Transaktionen signiert hat. Für unsere Zwecke ist die
+früheste Transaktion entscheidend, weshalb uns spätere Doppelausgabenversuche
+nicht kümmern. Die einzige Möglichkeit, die Abwesenheit einer Transaktion zu bestätigen, ist es, sich aller Transaktionen bewusst zu sein. Im Münzanstalt-basierten Modell
+wusste die Münzanstalt von allen Transaktionen und entschied, welche zuerst eintraf.
+Um das ohne eine vertrauenswürdige dritte Partei zu gewährleisten, müssen Transaktionen öffentlich bekannt gemacht werden [1], und wir brauchen ein System, durch das
+Teilnehmer sich auf einen einzigen Verlauf der Reihenfolge ihres Empfangs einigen können. Der Zahlungsempfänger benötigt einen Nachweis darüber, dass die Mehrheit der
+Nodes zum Zeitpunkt jeder Transaktion darin übereinstimmten, dass sie die zuerst empfangene war.</p>
+									    <h2 id="content">3. Zeitstempelserver</h2>
+									    <p>Die Lösung, welche wir vorschlagen, beginnt mit einem Zeitstempelserver. Ein Zeitstempelserver operiert, indem er einen Hashwert eines Blocks von Einträgen, die zeitgestempelt werden sollen, erzeugt und diesen weiträumig veröffentlicht, etwa in einer Zeitung
+oder einem Usenet-Beitrag [2-5]. Der Zeitstempel beweist, dass die Daten offensichtlicherweise zu diesem Zeitpunkt existiert haben müssen, um in den Hash zu gelangen.
+Jeder Zeitstempel schließt den vorherigen in seinen Hashwert ein und bildet so eine
+Kette, wobei jeder zusätzliche Zeitstempel die vorangegangenen bekräftigt.</p>
+									    <p><span class="image left"><img src="images/hash2.jpg" alt="" /></span>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
