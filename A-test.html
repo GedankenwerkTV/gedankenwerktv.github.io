@@ -85,6 +85,25 @@ Lösung ist das Hinzuziehen einer zentralen Autorität, oder Münzstätte, die j
 Münzstätte abgeliefert werden, um einen neuen ausgeben zu lassen, und nur im Falle
 von Coins, die direkt von der Münzstätte stammen, ist Verlass darauf, dass sie nicht doppelt ausgegeben wurden. Das Problem mit dieser Lösung ist, dass das Schicksal des gesamten Geldsystems von dem Unternehmen abhängt, welches die Münzstätte betreibt,
 wobei jede Transaktion über dieses laufen muss, genau wie bei einer Bank.</p>
+									    <p>Wir benötigen eine Möglichkeit, den Zahlungsempfänger wissen zu lassen, dass der
+vorherige Besitzer keine früheren Transaktionen signiert hat. Für unsere Zwecke ist die
+früheste Transaktion entscheidend, weshalb uns spätere Doppelausgabenversuche
+nicht kümmern. Die einzige Möglichkeit, die Abwesenheit einer Transaktion zu bestätigen, ist es, sich aller Transaktionen bewusst zu sein. Im Münzanstalt-basierten Modell
+wusste die Münzanstalt von allen Transaktionen und entschied, welche zuerst eintraf.
+Um das ohne eine vertrauenswürdige dritte Partei zu gewährleisten, müssen Transaktionen öffentlich bekannt gemacht werden [1], und wir brauchen ein System, durch das
+Teilnehmer sich auf einen einzigen Verlauf der Reihenfolge ihres Empfangs einigen können. Der Zahlungsempfänger benötigt einen Nachweis darüber, dass die Mehrheit der
+Nodes zum Zeitpunkt jeder Transaktion darin übereinstimmten, dass sie die zuerst empfangene war.</p>
+									    <h2 id="content">3. Zeitstempelserver</h2>
+									    <p>Die Lösung, welche wir vorschlagen, beginnt mit einem Zeitstempelserver. Ein Zeitstempelserver operiert, indem er einen Hashwert eines Blocks von Einträgen, die zeitgestempelt werden sollen, erzeugt und diesen weiträumig veröffentlicht, etwa in einer Zeitung
+oder einem Usenet-Beitrag [2-5]. Der Zeitstempel beweist, dass die Daten offensichtlicherweise zu diesem Zeitpunkt existiert haben müssen, um in den Hash zu gelangen.
+Jeder Zeitstempel schließt den vorherigen in seinen Hashwert ein und bildet so eine
+Kette, wobei jeder zusätzliche Zeitstempel die vorangegangenen bekräftigt.</p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
