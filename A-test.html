@@ -202,9 +202,20 @@ veröffentlichten Informationen, durch welche Zeitpunkt und Umfang individueller
 									    <p>Als zusätzliche Firewall sollte für jede Transaktion ein neues Schlüsselpaar verwendet werden, um zu verhindern, dass sie in Beziehung zu einem gemeinsamen Besitzer
 gebracht werden können. Eine gewisse Assoziation ist bei Transaktionen mit mehreren
 Eingängen dennoch unausweichlich, da diese notwendigerweise enthüllen, dass die Eingänge von demselben Besitzer stammen. Das durch die Enthüllung eines Schlüsselbesitzers zustande kommende Risiko besteht darin, dass per Assoziation auch andere Transaktionen desselben Besitzers aufgedeckt werden könnten</p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
+									    <p><h2 id="content">11. Berechnungen</h2></p>
+									    <p>Betrachten wir das eines Angreifers, der versucht, eine alternative Kette schneller als
+die ehrliche Kette zu generieren. Selbst im Falle eines Erfolges eröffnet dies nicht die
+Möglichkeit willkürlicher Änderungen am System, wie beispielsweise der Erzeugung von
+Wert aus dem Nichts oder der Beschlagnahmung von Geld, das dem Angreifer nie gehörte. Nodes werden keine ungültigen Transaktionen als Zahlungen akzeptieren und
+ehrliche Nodes werden niemals Blöcke akzeptieren, die sie enthalten. Ein Angreifer kann
+nur versuchen, eine seiner eigenen Transaktionen zu ändern und Geld, das er kürzlich
+ausgab, zurückzuholen</p>
+									    <p>Das Wettrennen zwischen aufrichtiger Kette und Angreifer kann als binominale zufällige Irrfahrt charakterisiert werden. Das Erfolgsereignis besteht darin, dass die ehrliche Kette um einen Block erweitert wird, was ihren Vorsprung um +1 erhöht, und das
+Fehlschlagsereignis besteht in der Erweiterung der Angreiferkette um einen Block,
+wodurch der Abstand um -1 reduziert wird.</p>
+									    <p>Die Wahrscheinlichkeit, dass ein Angreifer von einem gegebenen Abstand aus aufholt, entspricht dem Ruin des Spielers-Problem. Nehmen wir an, dass ein Glücksspieler
+unbegrenzten Kredits mit einem Rückstand beginnt und potenziell unbegrenzt viele
+Züge in dem Versuch spielen kann, auf nullzu kommen. Wir können die Wahrscheinlichkeit, dass er Null erreicht oder dass ein Angreifer die ehrliche Kette jemals einholt, folgendermaßen berechnen [8]:</p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
