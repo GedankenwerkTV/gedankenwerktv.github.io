@@ -78,7 +78,7 @@ CPU-Leistung kontrollieren als jede kooperierende Gruppe angreifender Nodes.</p>
 									    <p>Wir definieren einen elektronischen Coin als eine Kette digitaler Signaturen. Jeder Besitzer transferiert den Coin zum nächsten, indem er einen Hashwert der vorherigen
 Transaktion sowie den öffentlichen Schlüssel des nächsten Besitzers digital signiert und
 beide dem Ende des Coins hinzufügt. Der Zahlungsempfänger kann die Signaturen verifizieren, um die Inhaberkette zu verifizieren.</p>
-									    <p><span class="image left"><img src="images/Transaktion1.jpg" alt="" /></span>
+									    <p><span class="image fit"><img src="images/Transaktion1.jpg" alt="" /></span>
 									    <p>Das Problem ist natürlich, dass der Zahlungsempfänger nicht verifizieren kann, dass
 keiner der vorherigen Besitzer den Coin zweimal ausgegeben hat. Eine herkömmliche
 Lösung ist das Hinzuziehen einer zentralen Autorität, oder Münzstätte, die jede Transaktion auf Doppelausgaben hin überprüft. Nach jeder Transaktion muss der Coin bei der
@@ -234,20 +234,33 @@ Blöcke nach ihr aufgereiht sind. Er kennt das genaue Ausmaß des Fortschrittes 
 den der Angreifer machte, doch vorausgesetzt, dass die ehrlichen Blöcke die zu erwartende durchschnittliche Zeit per Block in Anspruch nahmen, wird der potenzielle Fortschritt des Angreifers eine Poisson-Verteilung mit folgendem Erwartungswert sein:</p>
 									    <p><span class="image fit"><img src="images/rech3.jpg" alt="" /></span>
 										<p><span class="image fit"><img src="images/rech5.jpg" alt="" /></span>	
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
+										<p><h2 id="content">12. Konklusion</h2></p>	
+									    <p>Wir haben ein System für elektronische Transaktionen vorgeschlagen, das nicht auf Vertrauen beruht. Wir begannen mit dem herkömmlichen Ansatz von aus digitalen Signaturen bestehenden Coins, was eine starke Kontrolle der Inhaberschaft ermöglicht, aber
+ohne eine Möglichkeit, Doppelausgaben zu verhindern, unvollständig ist. Um dies zu lösen, schlugen wir ein Peer-to-Peer-Netzwerk vor, das Arbeitsnachweise dazu benutzt,
+einen öffentlichen Verlauf von Transaktionen aufzuzeichnen, dessen Veränderung durch
+Angreifer rasch unpraktikabel wird, solange ehrliche Nodes den Großteil der CPU-Leistung kontrollieren. Das Netzwerk ist robust in seiner unstrukturierten Einfachheit. Nodes arbeiten gleichzeitig und mit wenig Koordination. Sie müssen nicht identifiziert werden, da Nachrichten nicht zu einem bestimmten Ort geschickt und nur nach dem Prinzip
+bestmöglichen Bemühens zugestellt werden müssen. Nodes können das Netzwerk nach
+Gutdünken verlassen oder sich ihm anschließen, wobei sie die Arbeitsnachweiskette als
+Beweis dafür akzeptieren, was während ihrer Abwesenheit stattfand. Sie stimmen mit
+ihrer CPU-Leistung ab, wobei sie ihre Akzeptanz gültiger Blöcke dadurch zum Ausdruck
+bringen, indem sie daran arbeiten, sie zu erweitern und ungültige Blöcke dadurch ablehnen, dass sie sich weigern, an ihnen zu arbeiten. Alle notwendigen Regeln und Anreize
+können mit diesem Konsensmechanismus durchgesetzt werden.</p>
+									    <p><h2 id="content">Literaturverzeichnis</h2></p>
+									    <p>1. W. Dai, “b-money,” http://www.weidai.com/bmoney.txt, 1998</p>
+									    <p>2. H. Massias, X.S. Avila, and J.-J. Quisquater, “Design of a secure timestamping service with minimal trust requirements,” in: 20th Symposium on Information Theory
+in the Benelux, Mai 1999.</p>
+									    <p>3. S. Haber, W.S. Stornetta, “How to time-stamp a digital document,” in: Journal of
+Cryptology, Bd. 3, Nr. 2, S. 99-111, 1991.</p>
+									    <p>4. D. Bayer, S. Haber, W.S. Stornetta, “Improving the efficiency and reliability of digital
+time-stamping,” in: Sequences II: Methods in: Communication, Security and Computer Science, S. 329-334, 1993.</p>
+									    <p>5. S. Haber, W.S. Stornetta, “Secure names for bit-strings,” in: Proceedings of the 4th
+ACM Conference on Computer and Communications Security, S. 28-35, April 1997.</p>
+									    <p>6. A. Back, “Hashcash – a denial of service counter-measure,”
+http://www.hashcash.org/papers/hashcash.pdf, 2002.</p>
+									    <p>7. R.C. Merkle, “Protocols for public key cryptosystems,” in: Proc. 1980 Symposium on
+Security and Privacy, IEEE Computer Society, S. 122-133, April 1980.</p>
+									    <p>8. W. Feller, “An introduction to probability theory and its applications,” 1957. </p>
+									    
 
 									<hr class="major" />
 
