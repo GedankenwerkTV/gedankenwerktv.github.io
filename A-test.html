@@ -112,6 +112,48 @@ die notwendige Anzahl an Null-Bits gibt. Sobald die zur Bereitstellung des Arbei
 werden, ohne diese Arbeit erneut zu verrichten. Sobald spätere Blöcke nach ihm in die
 Kette aufgenommen werden, schlösse die Arbeit zur Änderung des Blockes die Wiedererzeugung aller auf ihn folgenden Blöcke ein.</p>
 									    <p><span class="image fit"><img src="images/block2.jpg" alt="" /></span>
+									    <p>Der Arbeitsnachweis löst außerdem das Problem der Repräsentation bei Mehrheitsentscheidungen. Würde die Mehrheit auf dem Prinzip einer Stimme pro IP-Adresse basieren, könnte sie durch jeden, der in der Lage ist, viele IP-Adressen bereitzustellen, untergraben werden. Der Arbeitsnachweis etabliert im Grunde genommen eine Stimme
+pro CPU. Die Mehrheitsentscheidung wird durch die längste Kette repräsentiert, in welche der größte Arbeitsnachweisaufwand investiert wurde. Wenn der Großteil der CPU-Leistung von aufrichtigen Nodes kontrolliert wird, wird die aufrichtige Kette am schnellsten wachsen und alle konkurrierenden Ketten hinter sich lassen. Um einen vergangenen
+Block zu ändern, müsste ein Angreifer die Arbeitsnachweise dieses Blockes und aller auf
+ihn folgenden Blocke erneut erbringen und dann die Arbeit der aufrichtigen Nodes einund überholen. Wir werden später zeigen, dass die Wahrscheinlichkeit, dass ein langsamerer Angreifer aufholt, exponentiell abnimmt, wenn weitere Blöcke hinzugefügt werden.
+</p>
+									    <p>Um mit der Zeit zunehmende Hardwaregeschwindigkeit und fluktuierendes Interesse am Betrieb von Nodes auszugleichen, wird die Schwierigkeit des Arbeitsnachweises mittels eines gleitenden Durchschnitts bestimmt, der auf eine durchschnittliche Anzahl von Blöcken pro Stunde abzielt. Wenn sie zu schnell erzeugt werden, steigt die
+Schwierigkeit.</p>
+									    <h2 id="content">5. Netzwerk</h2>
+									    <p>Die Schritte für den Betrieb des Netzwerks sind folgende:</p>
+									    <p>1. Neue Transaktionen werden an alle Nodes ausgestrahlt.<br>
+										<p>2. Jeder Node sammelt neue Transaktionen in einem Block.<br>
+										<p>3. Jeder Node arbeitet daran, einen schwierigen Arbeitsnachweis für seinen Block
+zu finden.<br>	
+										<p>4. Wenn ein Node einen Arbeitsnachweis findet, strahlt er seinen Block an alle
+Nodes aus.<br>
+										<p>5. Nodes akzeptieren den Block nur, falls alle in ihm enthaltenen Transaktionen
+gültig und noch nicht ausgegeben sind.<br>
+										<p>6. Nodes drücken ihre Akzeptanz des Blockes dadurch aus, dass sie am nächsten
+Block in der Kette zu arbeiten beginnen und dabei den Hashwert des
+akzeptierten Blocks als vorherigen Hashwert benutzen.<br>		
+									    <p>Nodes sehen stets die längste Kette als die korrekte an und werden daran arbeiten,
+sie zu erweitern. Sollten zwei Nodes simultan verschiedene Versionen des nächsten
+Blocks ausstrahlen, könnten einige Nodes den einen oder anderen zuerst empfangen. In
+diesem Fall arbeiten sie an dem, welchen sie zuerst empfangen, aber speichern den anderen Zweig für den Fall, dass dieser länger wird. Der Gleichstand wird aufgehoben,
+wenn der nächste Arbeitsnachweis gefunden und einer der Zweige länger wird; die Nodes, welche am anderen Zweig arbeiteten, werden dann zum längeren wechseln</p>
+									    <p>Neu ausgestrahlte Transaktionen müssen nicht zwangsläufig alle Nodes erreichen.
+Solange sie viele Nodes erreichen, werden sie innerhalb kurzer Zeit in einen Block gelangen. Blockausstrahlungen sind außerdem gegen verlorengegangene Nachrichten resistent. Wenn ein Node einen Block nicht empfängt, wird er ihn anfragen, sobald er den
+nächsten Block empfängt und erkennt, dass er einen verpasst hat.</p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
+									    <p></p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
