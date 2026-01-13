@@ -163,10 +163,29 @@ die Wurzel im Hashwert des Blockes einbegriffen ist. Alte Blöcke können dann d
 Stutzen der Zweige des Baumes kompakter gemacht werden. Die inneren Hashwerte
 müssen nicht gespeichert werden.</p>
 									    <p><span class="image fit"><img src="images/kern2.jpg" alt="" /></span>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
+									    <p>Der Kennsatz eines transaktionslosen Blockes würde etwa 80 Bytes umfassen. Wenn
+wir annehmen, dass Blöcke etwa alle 10 Minuten generiert werden, 80 Bytes * 6 * 24 *
+365 = 4,2 MB pro Jahr. Bei einer typischen Ausstattung von im Jahr 2008 verkäuflicher Computersysteme mit 2 GB RAM und einem nach Moores Gesetz derzeit anzunehmenden Wachstum von 1,2 GB pro Jahr sollte Speicherplatz kein Problem sein, selbst wenn
+die Kennsätze von Blöcken gespeichert werden müssen.
+</p>
+									    <p><h2 id="content">8. Vereinfachte Zahlungsverifizierung</h2></p>
+									    <p>Es ist möglich, Zahlungen ohne den Betrieb eines Full Nodes zu überprüfen. Ein Nutzer
+muss lediglich die Kennsätze der längsten Arbeitsnachweiskette aufbewahren, welche
+er bei Nodes abfragen kann, bis er davon überzeugt ist, dass er die längste Kette besitzt,
+und den Hash-Baum-Zweig erhält, der die Transaktion mit dem Block, in welchem sie
+zeitgestempelt wurde, verbindet. Er kann die Transaktion nicht selbst überprüfen, aber
+indem er sie mit einem Ort in der Kette verknüpft, kann er sehen, dass ein Netzwerknode
+sie akzeptiert hat, wobei Blöcke, die nach ihm hinzugefügt wurden, zusätzlich bestätigen, dass das Netzwerk sie akzeptiert hat</p>
+									    <p><span class="image fit"><img src="images/kette2.jpg" alt="" /></span>
+									    <p>Somit ist die Überprüfung zuverlässig, solange aufrichtige Nodes das Netzwerk kontrollieren, aber gefährdeter, sollte das Netzwerk durch einen Angreifer überwältigt worden sein. Während Netzwerknodes dazu in der Lage sind Transaktionen selbst zu verifizieren, kann die vereinfachte Methode durch die gefälschten Transaktionen eines Angreifers überlistet werden, solange er das Netzwerk überwältigt. Eine Strategie zum
+Schutz davor wäre es, Warnmeldungen von Nodes anzunehmen, wenn diese einen ungültigen Block entdeckt haben, was die Software des Nutzers dazu aufforderte, den gesamten Block und die den Alarm auslösenden Transaktionen herunterzuladen, um die
+Inkonsistenz zu bestätigen. Unternehmen, die häufig Zahlungen entgegennehmen, würden wahrscheinlich zwecks größerer Unabhängigkeit ihrer Sicherheitsmaßnahmen und
+schnellerer Verifikation trotzdem ihre eigenen Nodes betreiben wollen.</p>
+									    <p><h2 id="content">9. Werte kombinieren und aufteilen</h2></p>
+									    <p>Obwohl es möglich wäre, Coins individuell zu handhaben, wäre es unpraktisch, für jeden
+Cent einer Überweisung separate Transaktionen zu tätigen. Um Werte kombinieren und
+aufspalten zu können, enthalten Transaktionen mehrere Ein- und Ausgänge. Normalerweise wird es entweder einen Eingang von einer größeren vorangegangenen Transaktion oder mehrere aus kleineren Beträgen zusammengesetzte, sowie höchstens zwei Ausgänge geben: einen für die Zahlung und einen, der eventuell anfallendes Wechselgeld zum Absender zurückschickt</p>
+									    <p><span class="image left"><img src="images/trans2.jpg" alt="" /></span>
 									    <p></p>
 									    <p></p>
 									    <p></p>
