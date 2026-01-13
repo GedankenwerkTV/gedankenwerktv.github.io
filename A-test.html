@@ -217,10 +217,21 @@ wodurch der Abstand um -1 reduziert wird.</p>
 unbegrenzten Kredits mit einem Rückstand beginnt und potenziell unbegrenzt viele
 Züge in dem Versuch spielen kann, auf nullzu kommen. Wir können die Wahrscheinlichkeit, dass er Null erreicht oder dass ein Angreifer die ehrliche Kette jemals einholt, folgendermaßen berechnen [8]:</p>
 									    <p><span class="image fit"><img src="images/rech1.jpg" alt="" /></span>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
+									    <p>Unsere Annahme, dass p > q, vorausgesetzt, nimmt die Wahrscheinlichkeit mit der Anzahl der Blöcke, die der Angreifer aufholen muss, exponentiell ab. Wenn er nicht früh
+einen glücklichen Sprung vorwärts macht, werden seine Chancen unter diesen widrigen
+Bedingungen verschwinden gering, während er weiter zurückfällt</p>
+									    <p>Nun erwägen wir, wie lange der Empfänger einer neuen Transaktion warten muss,
+bevor er sich ausreichend sicher sein kann, dass der Absender die Transaktion nicht
+mehr zu ändern imstande ist. Wir nehmen an, dass der Absender ein Angreifer ist, welcher dem Empfänger vorgaukeln will, dass er ihn vor einer Weile bezahlte, aber die Zahlung dann nach einem gewissen Zeitraum zu sich zurückleitet. Der Empfänger wird benachrichtigt, wenn das passiert, aber der Absender hofft, dass es dann bereits zu spät
+sein wird.</p>
+									    <p>Der Empfänger generiert ein neues Schlüsselpaar und gibt dem Absender kurz vor
+der Signierung den öffentlichen Schlüssel. Dies hält den Absender davon ab, im Voraus
+eine Kette von Blöcken vorzubereiten und kontinuierlich an dieser zu arbeiten, bis er das
+Glück hat, weit genug in den Vorsprung zu gelangen, um dann in diesem Moment die
+Transaktion auszuführen. Sobald die Transaktion abgeschickt wurde, beginnt der unehrliche Absender im geheimen, an einer parallelen Kette zu arbeiten, welche die alternative Version seiner Transaktion enthält.</p>
+									    <p>Der Empfänger wartet, bis die Transaktion zu einem Block hinzugefügt wurde und z
+Blöcke nach ihr aufgereiht sind. Er kennt das genaue Ausmaß des Fortschrittes nicht,
+den der Angreifer machte, doch vorausgesetzt, dass die ehrlichen Blöcke die zu erwartende durchschnittliche Zeit per Block in Anspruch nahmen, wird der potenzielle Fortschritt des Angreifers eine Poisson-Verteilung mit folgendem Erwartungswert sein:</p>
 									    <p></p>
 									    <p></p>
 									    <p></p>
