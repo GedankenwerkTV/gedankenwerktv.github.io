@@ -140,11 +140,29 @@ wenn der nächste Arbeitsnachweis gefunden und einer der Zweige länger wird; di
 									    <p>Neu ausgestrahlte Transaktionen müssen nicht zwangsläufig alle Nodes erreichen.
 Solange sie viele Nodes erreichen, werden sie innerhalb kurzer Zeit in einen Block gelangen. Blockausstrahlungen sind außerdem gegen verlorengegangene Nachrichten resistent. Wenn ein Node einen Block nicht empfängt, wird er ihn anfragen, sobald er den
 nächsten Block empfängt und erkennt, dass er einen verpasst hat.</p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
-									    <p></p>
+									    <h2 id="content">6. Anreiz</h2>
+									    <p>Der Konvention gemäß ist die erste Transaktion eines Blocks eine besondere Transaktion, welche einen neuen Coin beginnt, der dem Erzeuger des Blocks gehört. Dies schafft
+einen Anreiz für Nodes, das Netzwerk zu unterstützten, und stellt einen Distributionsmechanismus dar, der neue Coins in Umlauf bringt, da es keine zentrale Autorität gibt,
+welche sie ausgeben könnte. Der stetige Zufluss einer konstanten Menge neuer Coins
+gleicht der von Goldproduzenten, die Ressourcen dazu aufwenden, zusätzliches Gold in
+Umlauf zu bringen. In unserem Fall sind es CPU-Zeit und Strom, die aufgewendet werden</p>
+									    <p>Der Anreiz besteht zudem in Transaktionsgebühren. Wenn der Ausgangswert einer
+Transaktion geringer ist als der Eingangswert, besteht die Differenz aus einer Transaktionsgebühr, die dem Anreizwert des Blocks, welcher die Transaktion enthält, hinzugefügt
+wird. Sobald eine im Voraus festgelegte Anzahl an Coins in Umlauf gebracht wurde, kann
+der Anreiz gänzlich auf Transaktionsgebühren übergehen und vollständig inflationsfrei
+sein.</p>
+									    <p>Der Anreiz mag dabei helfen, Nodes zur Ehrlichkeit zu ermutigen. Sollte ein gieriger
+Angreifer in der Lage sein, mehr CPU-Leistung als alle ehrlichen Nodes aufzubauen,
+müsste er bei ihrer Verwendung zwischen dem Betrug anderer durch das Zurückstehlen
+seiner Zahlungen und der Erzeugung neuer Coins wählen. Er sollte es als profitabler erachten, sich an die Regeln zu halten, die ihn mit mehr Coins begünstigen als allen anderen zusammengenommen, als das System und damit die Gültigkeit seines eigenen Reichtums zu untergraben</p>
+									    <p><h2 id="content">7. Rückgewinnung von Speicherplatz</h2></p>
+									    <p>Sobald die letzte Transaktion in einem Coin unter einer ausreichenden Anzahl von Blöcken begraben ist, können die ausgegebenen Transaktionen vor ihr gelöscht werden,
+um Speicherplatz zu sparen. Um dies zu begünstigen, ohne den Hashwert des Blockes
+zu zerstören, werden Transaktionen in einen Hash-Baum [7][2][5] gehasht, wobei nur
+die Wurzel im Hashwert des Blockes einbegriffen ist. Alte Blöcke können dann durch das
+Stutzen der Zweige des Baumes kompakter gemacht werden. Die inneren Hashwerte
+müssen nicht gespeichert werden.</p>
+									    <p><span class="image fit"><img src="images/kern2.jpg" alt="" /></span>
 									    <p></p>
 									    <p></p>
 									    <p></p>
