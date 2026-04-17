@@ -113,16 +113,16 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #51749a;
+  color: #E8B923;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #51749a;
-    color: #51749a !important; }
+    border-bottom-color: #E8B923;
+    color: #E8B923 !important; }
     a:hover strong {
       color: inherit; }
 
 strong, b {
-  color: #3d4449;
+  color: #E8B923;
   font-weight: 600; }
 
 em, i {
@@ -132,7 +132,7 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #3d4449;
+  color: #E8B923;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.5;
