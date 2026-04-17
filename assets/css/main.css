@@ -2272,7 +2272,28 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+body, 
+p, li, dd, dt, 
+.inner, 
+.posts p, 
+.features p {
+    color: #ffffff !important;
+}
 
+h1, h2, h3, h4, h5, h6,
+strong, b,
+header h2, .major h2 {
+    color: #ffffff !important;
+}
+
+/* Links etwas heller als reines Weiß (besser lesbar) */
+a {
+    color: #e0e7ff !important;
+}
+
+a:hover {
+    color: #ffffff !important;
+}
 
 
 
