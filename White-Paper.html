@@ -176,7 +176,7 @@ und den Hash-Baum-Zweig erhält, der die Transaktion mit dem Block, in welchem s
 zeitgestempelt wurde, verbindet. Er kann die Transaktion nicht selbst überprüfen, aber
 indem er sie mit einem Ort in der Kette verknüpft, kann er sehen, dass ein Netzwerknode
 sie akzeptiert hat, wobei Blöcke, die nach ihm hinzugefügt wurden, zusätzlich bestätigen, dass das Netzwerk sie akzeptiert hat</p>
-									    <p><span class="image fit"><img src="images/kette2.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/kette2.jpg" alt="" /></span>
 									    <p>Somit ist die Überprüfung zuverlässig, solange aufrichtige Nodes das Netzwerk kontrollieren, aber gefährdeter, sollte das Netzwerk durch einen Angreifer überwältigt worden sein. Während Netzwerknodes dazu in der Lage sind Transaktionen selbst zu verifizieren, kann die vereinfachte Methode durch die gefälschten Transaktionen eines Angreifers überlistet werden, solange er das Netzwerk überwältigt. Eine Strategie zum
 Schutz davor wäre es, Warnmeldungen von Nodes anzunehmen, wenn diese einen ungültigen Block entdeckt haben, was die Software des Nutzers dazu aufforderte, den gesamten Block und die den Alarm auslösenden Transaktionen herunterzuladen, um die
 Inkonsistenz zu bestätigen. Unternehmen, die häufig Zahlungen entgegennehmen, würden wahrscheinlich zwecks größerer Unabhängigkeit ihrer Sicherheitsmaßnahmen und
@@ -198,7 +198,7 @@ kundzugeben, schließt diesen Ansatz aus, doch Datenschutz kann dadurch aufrecht
 jemand einen Betrag an jemand anderen schickt, aber ohne Informationen, welche die
 Transaktion mit irgendwem in Verbindung bringen. Dies ähnelt den von Aktienbörsen
 veröffentlichten Informationen, durch welche Zeitpunkt und Umfang individueller Händel, das „Band“, öffentlich gemacht werden, ohne die Parteien zu enthüllen</p>
-									    <p><span class="image fit"><img src="images/daten2.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/daten2.jpg" alt="" /></span>
 									    <p>Als zusätzliche Firewall sollte für jede Transaktion ein neues Schlüsselpaar verwendet werden, um zu verhindern, dass sie in Beziehung zu einem gemeinsamen Besitzer
 gebracht werden können. Eine gewisse Assoziation ist bei Transaktionen mit mehreren
 Eingängen dennoch unausweichlich, da diese notwendigerweise enthüllen, dass die Eingänge von demselben Besitzer stammen. Das durch die Enthüllung eines Schlüsselbesitzers zustande kommende Risiko besteht darin, dass per Assoziation auch andere Transaktionen desselben Besitzers aufgedeckt werden könnten</p>
@@ -216,7 +216,7 @@ wodurch der Abstand um -1 reduziert wird.</p>
 									    <p>Die Wahrscheinlichkeit, dass ein Angreifer von einem gegebenen Abstand aus aufholt, entspricht dem Ruin des Spielers-Problem. Nehmen wir an, dass ein Glücksspieler
 unbegrenzten Kredits mit einem Rückstand beginnt und potenziell unbegrenzt viele
 Züge in dem Versuch spielen kann, auf nullzu kommen. Wir können die Wahrscheinlichkeit, dass er Null erreicht oder dass ein Angreifer die ehrliche Kette jemals einholt, folgendermaßen berechnen [8]:</p>
-									    <p><span class="image fit"><img src="images/rech1.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/rech1.jpg" alt="" /></span>
 									    <p>Unsere Annahme, dass p > q, vorausgesetzt, nimmt die Wahrscheinlichkeit mit der Anzahl der Blöcke, die der Angreifer aufholen muss, exponentiell ab. Wenn er nicht früh
 einen glücklichen Sprung vorwärts macht, werden seine Chancen unter diesen widrigen
 Bedingungen verschwinden gering, während er weiter zurückfällt</p>
@@ -232,8 +232,8 @@ Transaktion auszuführen. Sobald die Transaktion abgeschickt wurde, beginnt der 
 									    <p>Der Empfänger wartet, bis die Transaktion zu einem Block hinzugefügt wurde und z
 Blöcke nach ihr aufgereiht sind. Er kennt das genaue Ausmaß des Fortschrittes nicht,
 den der Angreifer machte, doch vorausgesetzt, dass die ehrlichen Blöcke die zu erwartende durchschnittliche Zeit per Block in Anspruch nahmen, wird der potenzielle Fortschritt des Angreifers eine Poisson-Verteilung mit folgendem Erwartungswert sein:</p>
-									    <p><span class="image fit"><img src="images/rech3.jpg" alt="" /></span>
-										<p><span class="image fit"><img src="images/rech5.jpg" alt="" /></span>	
+									    <p><span class="image fit" style="max-width: 60%; margin: 0 0 1.5em 1.5em;"><img src="images/rech3.jpg" alt="" /></span>
+										<p><span class="image fit" style="max-width: 60%; margin: 0 0 1.5em 1.5em;"><img src="images/rech5.jpg" alt="" /></span>	
 										<p><h2 id="content">12. Konklusion</h2></p>	
 									    <p>Wir haben ein System für elektronische Transaktionen vorgeschlagen, das nicht auf Vertrauen beruht. Wir begannen mit dem herkömmlichen Ansatz von aus digitalen Signaturen bestehenden Coins, was eine starke Kontrolle der Inhaberschaft ermöglicht, aber
 ohne eine Möglichkeit, Doppelausgaben zu verhindern, unvollständig ist. Um dies zu lösen, schlugen wir ein Peer-to-Peer-Netzwerk vor, das Arbeitsnachweise dazu benutzt,
