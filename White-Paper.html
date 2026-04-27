@@ -98,7 +98,7 @@ Nodes zum Zeitpunkt jeder Transaktion darin übereinstimmten, dass sie die zuers
 oder einem Usenet-Beitrag [2-5]. Der Zeitstempel beweist, dass die Daten offensichtlicherweise zu diesem Zeitpunkt existiert haben müssen, um in den Hash zu gelangen.
 Jeder Zeitstempel schließt den vorherigen in seinen Hashwert ein und bildet so eine
 Kette, wobei jeder zusätzliche Zeitstempel die vorangegangenen bekräftigt.</p>
-									    <p><span class="image fit"><img src="images/hash2.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/hash2.jpg" alt="" /></span>
 										<h2 id="content">4. Arbeitsnachweis</h2>	
 									    <p>Um einen verteilten Zeitstempelserver auf Peer-to-Peer-Basis zu implementieren, werden wir statt Zeitungen oder Usenet-Beiträgen ein Arbeitsnachweissystem ähnlich dem
 von Adam Backs Hashcash [6] benötigen. Der Arbeitsnachweis involviert die Suche nach
@@ -111,7 +111,7 @@ eine Nonce im Block so lange erhöhen, bis ein Wert gefunden wird, welcher dem B
 die notwendige Anzahl an Null-Bits gibt. Sobald die zur Bereitstellung des Arbeitsnachweises erforderliche CPU-Leistung aufgewandt wurde, kann der Block nicht geändert
 werden, ohne diese Arbeit erneut zu verrichten. Sobald spätere Blöcke nach ihm in die
 Kette aufgenommen werden, schlösse die Arbeit zur Änderung des Blockes die Wiedererzeugung aller auf ihn folgenden Blöcke ein.</p>
-									    <p><span class="image fit"><img src="images/block2.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/block2.jpg" alt="" /></span>
 									    <p>Der Arbeitsnachweis löst außerdem das Problem der Repräsentation bei Mehrheitsentscheidungen. Würde die Mehrheit auf dem Prinzip einer Stimme pro IP-Adresse basieren, könnte sie durch jeden, der in der Lage ist, viele IP-Adressen bereitzustellen, untergraben werden. Der Arbeitsnachweis etabliert im Grunde genommen eine Stimme
 pro CPU. Die Mehrheitsentscheidung wird durch die längste Kette repräsentiert, in welche der größte Arbeitsnachweisaufwand investiert wurde. Wenn der Großteil der CPU-Leistung von aufrichtigen Nodes kontrolliert wird, wird die aufrichtige Kette am schnellsten wachsen und alle konkurrierenden Ketten hinter sich lassen. Um einen vergangenen
 Block zu ändern, müsste ein Angreifer die Arbeitsnachweise dieses Blockes und aller auf
@@ -162,7 +162,7 @@ zu zerstören, werden Transaktionen in einen Hash-Baum [7][2][5] gehasht, wobei 
 die Wurzel im Hashwert des Blockes einbegriffen ist. Alte Blöcke können dann durch das
 Stutzen der Zweige des Baumes kompakter gemacht werden. Die inneren Hashwerte
 müssen nicht gespeichert werden.</p>
-									    <p><span class="image fit"><img src="images/kern2.jpg" alt="" /></span>
+									    <p><span class="image fit" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/kern2.jpg" alt="" /></span>
 									    <p>Der Kennsatz eines transaktionslosen Blockes würde etwa 80 Bytes umfassen. Wenn
 wir annehmen, dass Blöcke etwa alle 10 Minuten generiert werden, 80 Bytes * 6 * 24 *
 365 = 4,2 MB pro Jahr. Bei einer typischen Ausstattung von im Jahr 2008 verkäuflicher Computersysteme mit 2 GB RAM und einem nach Moores Gesetz derzeit anzunehmenden Wachstum von 1,2 GB pro Jahr sollte Speicherplatz kein Problem sein, selbst wenn
@@ -185,7 +185,7 @@ schnellerer Verifikation trotzdem ihre eigenen Nodes betreiben wollen.</p>
 									    <p>Obwohl es möglich wäre, Coins individuell zu handhaben, wäre es unpraktisch, für jeden
 Cent einer Überweisung separate Transaktionen zu tätigen. Um Werte kombinieren und
 aufspalten zu können, enthalten Transaktionen mehrere Ein- und Ausgänge. Normalerweise wird es entweder einen Eingang von einer größeren vorangegangenen Transaktion oder mehrere aus kleineren Beträgen zusammengesetzte, sowie höchstens zwei Ausgänge geben: einen für die Zahlung und einen, der eventuell anfallendes Wechselgeld zum Absender zurückschickt</p>									    
-									    <p><span class="image left"><img src="images/trans2.jpg" alt="" /></span>
+									    <p><span class="image left" style="max-width: 70%; margin: 0 0 1.5em 1.5em;"><img src="images/trans2.jpg" alt="" /></span>
 									    <p>Es sollte angemerkt werden, dass die Auffächerung von Transaktionen, bei der eine
 Transaktion von mehreren anderen Transaktionen abhängt, welche wiederum von vielen weiteren abhängen, hier kein Problem darstellt. Es ist niemals vonnöten, den gesamten Verlauf einer Transaktion zu extrahieren.</p>
 									    <p></p>
